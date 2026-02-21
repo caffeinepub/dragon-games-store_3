@@ -1,12 +1,12 @@
 # Specification
 
 ## Summary
-**Goal:** Deploy Draft Version 4 of the Dragon Games Store to the live Internet Computer network.
+**Goal:** Replace platform emojis with actual logo images and add navigation arrows to horizontally scrollable game rows.
 
 **Planned changes:**
-- Deploy the application to the Internet Computer mainnet
-- Ensure all existing features (authentication, admin panel, game catalog, user profiles) work on the live deployment
-- Verify GameCard components display with larger image dimensions
-- Confirm video trailers require click interaction and do not autoplay
+- Replace platform emoji icons (🖥️, 🎮, 🎮) with actual logo images (Steam, Xbox, PlayStation)
+- Add white navigation arrows on left and right sides of each game row for horizontal scrolling
+- Hide/disable arrows when at start or end of row
+- Ensure logos are properly sized and styled to match existing badge design
 
-**User-visible outcome:** Users can access the Dragon Games Store on the live Internet Computer network with all features functional, including larger game images and click-to-play video trailers.
+**User-visible outcome:** Users will see professional platform logos instead of emojis on game cards, and clear white arrow buttons to navigate through games in each row.

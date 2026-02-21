@@ -1,13 +1,54 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useGetAllGames } from '../hooks/useGames';
 import GameCard from './GameCard';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { Input } from '@/components/ui/input';
-import { Loader2, Search } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Loader2, Search, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function GameCatalog() {
   const { data: games, isLoading, error } = useGetAllGames();
   const [searchQuery, setSearchQuery] = useState('');
+  const scrollRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [scrollStates, setScrollStates] = useState<{ [key: number]: { atStart: boolean; atEnd: boolean } }>({});
+
+  const updateScrollState = (index: number) => {
+    const scrollContainer = scrollRefs.current[index];
+    if (!scrollContainer) return;
+
+    const atStart = scrollContainer.scrollLeft <= 0;
+    const atEnd = scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth - 1;
+
+    setScrollStates(prev => ({
+      ...prev,
+      [index]: { atStart, atEnd }
+    }));
+  };
+
+  useEffect(() => {
+    // Initialize scroll states for all rows
+    scrollRefs.current.forEach((_, index) => {
+      updateScrollState(index);
+    });
+  }, [games, searchQuery]);
+
+  const handleScroll = (index: number, direction: 'left' | 'right') => {
+    const scrollContainer = scrollRefs.current[index];
+    if (!scrollContainer) return;
+
+    const scrollAmount = 350; // Slightly more than card width (320px) + gap
+    const newScrollLeft = direction === 'left' 
+      ? scrollContainer.scrollLeft - scrollAmount 
+      : scrollContainer.scrollLeft + scrollAmount;
+
+    scrollContainer.scrollTo({
+      left: newScrollLeft,
+      behavior: 'smooth'
+    });
+
+    // Update scroll state after animation
+    setTimeout(() => updateScrollState(index), 300);
+  };
 
   if (isLoading) {
     return (
@@ -71,9 +112,41 @@ export default function GameCatalog() {
         ) : (
           <div className="space-y-8">
             {rows.map((row, rowIndex) => (
-              <div key={rowIndex}>
+              <div key={rowIndex} className="relative group">
+                {/* Left Arrow */}
+                {row.length > 1 && !scrollStates[rowIndex]?.atStart && (
+                  <Button
+                    onClick={() => handleScroll(rowIndex, 'left')}
+                    variant="outline"
+                    size="icon"
+                    className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white border-2 border-black hover:bg-gray-100 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
+                    aria-label="Scroll left"
+                  >
+                    <ChevronLeft className="w-6 h-6 text-black" />
+                  </Button>
+                )}
+
+                {/* Right Arrow */}
+                {row.length > 1 && !scrollStates[rowIndex]?.atEnd && (
+                  <Button
+                    onClick={() => handleScroll(rowIndex, 'right')}
+                    variant="outline"
+                    size="icon"
+                    className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white border-2 border-black hover:bg-gray-100 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
+                    aria-label="Scroll right"
+                  >
+                    <ChevronRight className="w-6 h-6 text-black" />
+                  </Button>
+                )}
+
                 <ScrollArea className="w-full whitespace-nowrap">
-                  <div className="flex gap-6 pb-4">
+                  <div 
+                    ref={(el) => {
+                      scrollRefs.current[rowIndex] = el;
+                    }}
+                    className="flex gap-6 pb-4"
+                    onScroll={() => updateScrollState(rowIndex)}
+                  >
                     {row.map((game) => (
                       <GameCard key={game.id} game={game} />
                     ))}

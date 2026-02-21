@@ -1,42 +1,66 @@
 {
   "kind": "build_request",
-  "title": "Deploy Draft Version 4 to Live Network",
+  "title": "Replace platform emojis with logos and add slide navigation arrows",
   "projectName": "Dragon Games Store",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Deploy the current Draft Version 4 implementation with larger GameCard images and click-to-play video trailers to the live Internet Computer network",
+      "text": "Replace all platform emoji icons with actual logo images: Steam logo for PC platform, Xbox logo for Xbox platform, PlayStation logo for PS4/PS5 platforms",
       "target": "both",
       "source": {
         "messageIds": [
-          "msg-user-yes"
+          "msg-5"
         ],
         "quotes": [
-          "Yes"
+          "Make the game logos in steam xbox and ps icon too not just emojis and remove emojis like for xbox there will be xbox logo and for pc there will be steam same as ps for playstation"
         ]
       },
       "acceptanceCriteria": [
-        "Application is deployed and accessible on the Internet Computer mainnet",
-        "All GameCard components display with the increased image dimensions",
-        "Video trailers require click interaction to play and do not autoplay",
-        "All existing functionality (authentication, admin panel, game catalog, user profiles) works correctly on the live deployment"
+        "Platform badges on game cards display actual logo images instead of text emojis",
+        "Steam logo appears for PC platform games",
+        "Xbox logo appears for Xbox platform games",
+        "PlayStation logo appears for PS4 and PS5 platform games",
+        "Logo images are properly sized and styled to match the existing badge design"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Add white navigation arrows to the horizontally scrollable game rows to guide users on how to slide through games",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "when sliding b/w games there must be horizontal slides so if slides are horizontal add white normal arrow to guide people where to slide"
+        ]
+      },
+      "acceptanceCriteria": [
+        "White arrow buttons appear on both left and right sides of each game row",
+        "Arrows are positioned to clearly indicate horizontal scrolling capability",
+        "Left arrow is hidden or disabled when at the start of a row",
+        "Right arrow is hidden or disabled when at the end of a row",
+        "Clicking arrows smoothly scrolls the game row horizontally"
       ]
     }
   ],
   "constraints": [
-    "Preserve all existing functionality including authentication, admin game management, and user profile features",
-    "Maintain the current database schema and backend logic without modifications",
-    "Keep all frontend immutable paths unchanged (hooks/useInternetIdentity, hooks/useActor, main.tsx, components/ui)"
+    "Maintain existing game card layout and styling",
+    "Preserve the horizontally scrollable row structure in GameCatalog component",
+    "Keep the white/black/blue color scheme consistent"
   ],
   "nonGoals": [
-    "Adding new features beyond what exists in Draft Version 4",
-    "Modifying the visual design or styling",
-    "Changing any backend data models or API endpoints",
-    "Adding new game management capabilities"
+    "Changing the overall layout of the game catalog",
+    "Modifying the game data model or backend platform logic",
+    "Altering the existing platform filter functionality"
   ],
   "imageRequirements": {
-    "required": [],
+    "required": [
+      "Steam platform logo icon with transparent background (steam-logo.dim_64x64.png)",
+      "Xbox platform logo icon with transparent background (xbox-logo.dim_64x64.png)",
+      "PlayStation platform logo icon with transparent background (playstation-logo.dim_64x64.png)"
+    ],
     "edits": []
   }
 }

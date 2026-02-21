@@ -5,14 +5,36 @@
   "architectural_notes": [],
   "known_issues": [],
   "isFixRequest": false,
-  "existing_features": [],
-  "new_feature_requests": [
+  "imageRequirements": "## Required Images\n- Steam platform logo icon with transparent background (steam-logo.dim_64x64.png)\n- Xbox platform logo icon with transparent background (xbox-logo.dim_64x64.png)\n- PlayStation platform logo icon with transparent background (playstation-logo.dim_64x64.png)",
+  "existing_features": [
     {
-      "id": "AR-1",
-      "summary": "Deploy the current Draft Version 4 implementation with larger GameCard images and click-to-play video trailers to the live Internet Computer network",
+      "id": "feature-replace-all-platform-emoji-icons-with-actual-logo-images-steam-logo-for-pc-platform-xbox-logo-for-xbox-platform-playstation-logo-for-ps4-ps5-platforms",
+      "title": "Replace all platform emoji icons with actual logo images: Steam logo for PC platform, Xbox logo for Xbox platform, PlayStation logo for PS4/PS5 platforms",
       "reqIds": [
         "REQ-1"
       ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-white-navigation-arrows-to-the-horizontally-scrollable-game-rows-to-guide-users-on-how-to-slide-through-games",
+      "title": "Add white navigation arrows to the horizontally scrollable game rows to guide users on how to slide through games",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Replace emoji icons with actual platform logos (Steam, Xbox, PlayStation)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add white navigation arrows to guide horizontal game sliding",
+      "reqIds": [],
       "status": "pending"
     }
   ],

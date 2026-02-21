@@ -1,77 +1,41 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Deploy Draft Version 4 to Live Network",
+  "title": "Replace platform emojis with logos and add slide navigation arrows",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Deploy the current Draft Version 4 implementation with larger GameCard images and click-to-play video trailers to the live Internet Computer network",
+      "summary": "Replace all platform emoji icons with actual logo images for Steam, Xbox, and PlayStation platforms",
       "acceptanceCriteria": [
-        "Application is deployed and accessible on the Internet Computer mainnet",
-        "All GameCard components display with the increased image dimensions",
-        "Video trailers require click interaction to play and do not autoplay",
-        "All existing functionality (authentication, admin panel, game catalog, user profiles) works correctly on the live deployment"
+        "Platform badges on game cards display actual logo images instead of text emojis",
+        "Steam logo appears for PC platform games",
+        "Xbox logo appears for Xbox platform games",
+        "PlayStation logo appears for PS4 and PS5 platform games",
+        "Logo images are properly sized and styled to match the existing badge design"
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/GameCard.tsx",
           "operation": "modify",
-          "description": "Verify that GameCard component uses larger image dimensions and implements click-to-play video trailer behavior without autoplay. Ensure video controls include user-interaction requirement and that the ExternalBlob.getDirectURL() is used for both image and video rendering to leverage browser caching and streaming on the live network."
-        },
-        {
-          "path": "frontend/src/pages/HomePage.tsx",
-          "operation": "modify",
-          "description": "Review HomePage to ensure it properly displays the GameCatalog and AboutUs sections with the updated GameCard styling. Verify that UserProfileSetup modal integration works correctly for first-time authenticated users on the live deployment."
-        },
-        {
-          "path": "frontend/src/pages/AdminPage.tsx",
-          "operation": "modify",
-          "description": "Verify AdminPage correctly renders the AdminGameList and AdminGameForm components with proper authentication guards using the authorization component. Ensure admin-only access control works on the live network."
-        },
+          "description": "Replace platform emoji rendering with image logo rendering. Import the generated platform logo images from frontend/public/assets/generated/steam-logo.dim_64x64.png, frontend/public/assets/generated/xbox-logo.dim_64x64.png, and frontend/public/assets/generated/playstation-logo.dim_64x64.png. Update the platform badge rendering logic to display <img> elements with the appropriate logo based on the game's platform value (pc → steam-logo, xbox → xbox-logo, ps4/ps5 → playstation-logo). Ensure images are sized appropriately (e.g., 16x16 or 20x20 pixels) and maintain the existing badge styling with proper spacing and alignment."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Add white navigation arrows to horizontally scrollable game rows to guide users on sliding through games",
+      "acceptanceCriteria": [
+        "White arrow buttons appear on both left and right sides of each game row",
+        "Arrows are positioned to clearly indicate horizontal scrolling capability",
+        "Left arrow is hidden or disabled when at the start of a row",
+        "Right arrow is hidden or disabled when at the end of a row",
+        "Clicking arrows smoothly scrolls the game row horizontally"
+      ],
+      "file_operations": [
         {
           "path": "frontend/src/components/GameCatalog.tsx",
           "operation": "modify",
-          "description": "Confirm GameCatalog properly renders GameCard components with larger images and click-to-play videos in the scrollable layout. Verify search filtering and loading states work correctly on the live deployment."
-        },
-        {
-          "path": "frontend/src/components/AdminGameForm.tsx",
-          "operation": "modify",
-          "description": "Verify AdminGameForm properly handles image uploads using the blob-storage component with ExternalBlob.fromBytes() and withUploadProgress() for tracking upload progress. Ensure video URL field and all game properties are correctly wired for live network deployment."
-        },
-        {
-          "path": "frontend/src/components/Header.tsx",
-          "operation": "modify",
-          "description": "Confirm Header component displays authentication status, login/logout functionality using the authorization component, and conditional admin panel navigation based on user role. Verify the component works correctly on the live network."
-        },
-        {
-          "path": "frontend/src/hooks/useInternetIdentity.ts",
-          "operation": "modify",
-          "description": "Review Internet Identity authentication hook to ensure it properly manages login state, identity persistence, and delegation validation for the live Internet Computer network. Verify AuthClient integration and error handling work correctly in production."
-        },
-        {
-          "path": "frontend/src/hooks/useActor.ts",
-          "operation": "modify",
-          "description": "Verify the actor hook properly creates backend connections with authentication for the live network deployment. Ensure access control initialization and query invalidation work correctly in production."
-        },
-        {
-          "path": "frontend/src/hooks/useAuth.ts",
-          "operation": "modify",
-          "description": "Confirm authentication hooks (useGetCallerUserProfile, useSaveCallerUserProfile, useGetCallerUserRole, useIsCallerAdmin) properly fetch and manage user data from the live backend. Verify the authorization component integration works correctly."
-        },
-        {
-          "path": "frontend/src/hooks/useGames.ts",
-          "operation": "modify",
-          "description": "Verify game management hooks properly handle CRUD operations with the blob-storage component for images and videos. Ensure ExternalBlob integration works correctly for the live network deployment."
-        },
-        {
-          "path": "frontend/src/components/UserProfileSetup.tsx",
-          "operation": "modify",
-          "description": "Confirm UserProfileSetup modal properly prompts first-time users for profile creation using the authorization component. Verify the modal cannot be dismissed until profile setup is complete on the live deployment."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Review root application component to ensure TanStack Router configuration, layout structure, and route definitions work correctly for the live network deployment."
+          "description": "Add horizontal scroll navigation arrows to each game row. For each horizontally scrollable row of game cards, add left and right arrow buttons positioned absolutely on the left and right edges. Implement scroll state tracking using React refs and state to detect when the user is at the start or end of each row. Hide or disable the left arrow when scrolled to the start position and the right arrow when scrolled to the end. Add onClick handlers to smoothly scroll the row by one card width (or a fixed amount) using scrollBy or smooth scroll behavior. Style arrows as white (or outlined white) to match the application's color scheme, with hover states for better UX. Ensure arrows are clearly visible against the content and positioned to avoid obscuring game cards."
         }
       ]
     }
