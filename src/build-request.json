@@ -1,57 +1,55 @@
 {
   "kind": "build_request",
-  "title": "Update WhatsApp contact number and add game search functionality",
+  "title": "Enlarge game images and trigger video on click",
   "projectName": "Dragon Games Store",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-12",
-      "text": "Update the WhatsApp contact number from 918757242955 to 918757242995 in all Buy Now button links throughout the website",
+      "id": "REQ-1",
+      "text": "Increase the size of game images in GameCard component to make them more prominent in the display",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-6"
+          "msg-latest"
         ],
         "quotes": [
-          "https://wa.me/918757242995 change old number contact to this number on this website & buy now to this new number"
+          "make game image to appear bigger"
         ]
       },
       "acceptanceCriteria": [
-        "All Buy Now buttons redirect to https://wa.me/918757242995",
-        "The GameCard component uses the updated WhatsApp number",
-        "No references to the old number 918757242955 remain in the codebase"
+        "Game images are visibly larger than current size",
+        "Images remain properly proportioned and do not overflow their containers",
+        "Layout adjusts appropriately to accommodate larger images"
       ]
     },
     {
-      "id": "REQ-13",
-      "text": "Add a search bar with a search icon at the top of the page that allows users to filter games by name in real-time",
+      "id": "REQ-2",
+      "text": "Change video trailer behavior in GameCard so that the video only plays when user clicks on the game image, not automatically",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-6"
+          "msg-latest"
         ],
         "quotes": [
-          "add search bar for games on top and search icon"
+          "once we click on game image then the video trailer starts not before"
         ]
       },
       "acceptanceCriteria": [
-        "Search bar is prominently displayed at the top of the game catalog section",
-        "Search icon is visible within or adjacent to the search input field",
-        "Typing in the search bar filters the displayed games by matching game names",
-        "Search is case-insensitive and updates results in real-time",
-        "Clearing the search bar shows all games again"
+        "Video trailer does not autoplay when GameCard is rendered",
+        "Clicking on the game image triggers the video trailer to start playing",
+        "Video player controls remain accessible after click-to-play is initiated"
       ]
     }
   ],
   "constraints": [
-    "Do not modify the backend schema or API endpoints",
-    "Maintain the existing white background with black text theme",
-    "Keep the horizontal scrolling layout for game catalog rows"
+    "Only modify frontend/src/components/GameCard.tsx",
+    "Do not change backend logic or data structures",
+    "Preserve existing Buy Now and admin action buttons functionality"
   ],
   "nonGoals": [
-    "Adding advanced search filters beyond game name",
-    "Implementing search by platform, price, or other attributes",
-    "Creating a dedicated search results page"
+    "Changing the overall layout structure of GameCatalog",
+    "Modifying video source URLs or trailer data",
+    "Adding new video player features beyond click-to-play"
   ],
   "imageRequirements": {
     "required": [],

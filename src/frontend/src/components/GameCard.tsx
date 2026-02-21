@@ -2,7 +2,8 @@ import { Game } from '../backend';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { MessageCircle, Edit, Trash2 } from 'lucide-react';
+import { MessageCircle, Edit, Trash2, Play } from 'lucide-react';
+import { useState, useRef } from 'react';
 
 interface GameCardProps {
   game: Game;
@@ -14,6 +15,8 @@ interface GameCardProps {
 export default function GameCard({ game, isAdmin, onEdit, onDelete }: GameCardProps) {
   const imageUrl = game.image.getDirectURL();
   const priceText = `₹${game.price.toString()}/- only`;
+  const [showVideo, setShowVideo] = useState(false);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
   const platformLabels = {
     pc: 'PC',
@@ -27,8 +30,24 @@ export default function GameCard({ game, isAdmin, onEdit, onDelete }: GameCardPr
     window.open(`https://wa.me/918757242995?text=${message}`, '_blank', 'noopener,noreferrer');
   };
 
+  const handleImageClick = () => {
+    if (game.trailerVideoUrl) {
+      setShowVideo(true);
+      // Add autoplay parameter to the URL when user clicks
+      setTimeout(() => {
+        if (iframeRef.current) {
+          const currentSrc = iframeRef.current.src;
+          if (!currentSrc.includes('autoplay=1')) {
+            const separator = currentSrc.includes('?') ? '&' : '?';
+            iframeRef.current.src = `${currentSrc}${separator}autoplay=1`;
+          }
+        }
+      }, 100);
+    }
+  };
+
   return (
-    <Card className="relative bg-white border-2 border-black rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex-shrink-0 w-80 h-[520px] flex flex-col">
+    <Card className="relative bg-white border-2 border-black rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex-shrink-0 w-80 h-[600px] flex flex-col">
       {/* Sale Badge */}
       {game.onSale && (
         <div className="absolute top-3 left-3 z-10">
@@ -43,14 +62,37 @@ export default function GameCard({ game, isAdmin, onEdit, onDelete }: GameCardPr
         <p className="text-xl font-bold text-black">{priceText}</p>
       </div>
 
-      {/* Game Image */}
-      <div className="relative h-48 bg-gray-100 overflow-hidden">
-        <img
-          src={imageUrl}
-          alt={game.name}
-          className="w-full h-full object-cover"
-        />
-      </div>
+      {/* Game Image or Video */}
+      {!showVideo ? (
+        <div 
+          className={`relative h-72 bg-gray-100 overflow-hidden ${game.trailerVideoUrl ? 'cursor-pointer group' : ''}`}
+          onClick={handleImageClick}
+        >
+          <img
+            src={imageUrl}
+            alt={game.name}
+            className="w-full h-full object-cover"
+          />
+          {game.trailerVideoUrl && (
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all flex items-center justify-center">
+              <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-blue-600 rounded-full p-4">
+                <Play className="w-8 h-8 text-white fill-white" />
+              </div>
+            </div>
+          )}
+        </div>
+      ) : (
+        <div className="h-72 bg-gray-100 overflow-hidden">
+          <iframe
+            ref={iframeRef}
+            src={game.trailerVideoUrl}
+            title={`${game.name} trailer`}
+            className="w-full h-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      )}
 
       {/* Game Details */}
       <div className="p-4 flex-1 flex flex-col">
@@ -62,21 +104,6 @@ export default function GameCard({ game, isAdmin, onEdit, onDelete }: GameCardPr
         </div>
 
         <p className="text-sm text-gray-700 mb-3 line-clamp-3 flex-1">{game.description}</p>
-
-        {/* Trailer Video */}
-        {game.trailerVideoUrl && (
-          <div className="mb-3">
-            <div className="aspect-video bg-gray-100 rounded border border-gray-300 overflow-hidden">
-              <iframe
-                src={game.trailerVideoUrl}
-                title={`${game.name} trailer`}
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-          </div>
-        )}
 
         {/* Action Buttons */}
         <div className="mt-auto space-y-2">

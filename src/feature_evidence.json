@@ -2,8 +2,8 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-whatsapp-contact-number-from-918757242955-to-918757242995-in-all-buy-now-button-links-throughout-the-website",
-      "featureTitle": "Update the WhatsApp contact number from 918757242955 to 918757242995 in all Buy Now button links throughout the website",
+      "featureId": "feature-increase-the-size-of-game-images-in-gamecard-component-to-make-them-more-prominent-in-the-display",
+      "featureTitle": "Increase the size of game images in GameCard component to make them more prominent in the display",
       "files": [
         "frontend/src/components/GameCard.tsx"
       ],
@@ -17,15 +17,15 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-12"
+        "REQ-1"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-add-a-search-bar-with-a-search-icon-at-the-top-of-the-page-that-allows-users-to-filter-games-by-name-in-real-time",
-      "featureTitle": "Add a search bar with a search icon at the top of the page that allows users to filter games by name in real-time",
+      "featureId": "feature-change-video-trailer-behavior-in-gamecard-so-that-the-video-only-plays-when-user-clicks-on-the-game-image-not-automatically",
+      "featureTitle": "Change video trailer behavior in GameCard so that the video only plays when user clicks on the game image, not automatically",
       "files": [
-        "frontend/src/components/GameCatalog.tsx"
+        "frontend/src/components/GameCard.tsx"
       ],
       "components": [
         "authorization@4.0.0",
@@ -37,7 +37,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-13"
+        "REQ-2"
       ],
       "confidence": "high"
     }

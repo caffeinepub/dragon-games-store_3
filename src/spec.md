@@ -1,11 +1,10 @@
 # Specification
 
 ## Summary
-**Goal:** Update WhatsApp contact number and add game search functionality to the Dragon Games Store website.
+**Goal:** Improve game card display by enlarging game images and changing video playback to click-triggered instead of automatic.
 
 **Planned changes:**
-- Update all Buy Now button WhatsApp links from 918757242955 to 918757242995
-- Add a search bar with search icon at the top of the game catalog
-- Implement real-time game filtering by name as users type in the search bar
+- Increase the size of game images in the GameCard component
+- Change video trailer behavior to only play when user clicks on the game image
 
-**User-visible outcome:** Users can click Buy Now buttons that connect to the updated WhatsApp number (918757242995), and they can search for games by name using a search bar at the top of the catalog that filters results in real-time.
+**User-visible outcome:** Users will see larger, more prominent game images and can control when video trailers start playing by clicking on the images.
