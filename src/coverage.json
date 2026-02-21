@@ -1,35 +1,24 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-21T22:00:15.177Z",
+  "generatedAt": "2026-02-21T22:41:46.326Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 2,
-    "implemented": 2,
+    "total": 1,
+    "implemented": 1,
     "items": [
       {
         "id": "REQ-1",
-        "summary": "Replace all platform emoji icons with actual logo images: Steam logo for PC platform, Xbox logo for Xbox platform, PlayStation logo for PS4/PS5 platforms",
+        "summary": "Modify the price display in GameCard component to use medium sizing - not too small, not too large - while keeping it positioned in the top right corner below the sale label",
         "status": "implemented",
         "plannedFiles": [
           "frontend/src/components/GameCard.tsx"
         ],
         "matchedFiles": [
           "frontend/src/components/GameCard.tsx"
-        ]
-      },
-      {
-        "id": "REQ-2",
-        "summary": "Add white navigation arrows to the horizontally scrollable game rows to guide users on how to slide through games",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/components/GameCatalog.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/components/GameCatalog.tsx"
         ]
       }
     ]
@@ -39,11 +28,7 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/public/assets/generated/playstation-logo.dim_64x64.png",
-    "frontend/public/assets/generated/steam-logo.dim_64x64.png",
-    "frontend/public/assets/generated/xbox-logo.dim_64x64.png",
     "frontend/src/components/GameCard.tsx",
-    "frontend/src/components/GameCatalog.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

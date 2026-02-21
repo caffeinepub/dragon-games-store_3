@@ -71,9 +71,9 @@ export default function GameCard({ game, isAdmin, onEdit, onDelete }: GameCardPr
           </div>
         )}
 
-        {/* Price Badge - Updated styling */}
+        {/* Price Badge - Medium sizing */}
         <div className="absolute top-3 right-3 z-10 bg-blue-600 rounded-lg px-4 py-3 shadow-lg border-2 border-blue-700">
-          <p className="text-3xl font-bold text-white">{priceText}</p>
+          <p className="text-xl font-bold text-white">{priceText}</p>
         </div>
 
         {/* Game Image */}

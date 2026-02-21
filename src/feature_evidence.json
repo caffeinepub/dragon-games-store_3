@@ -2,8 +2,8 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-replace-all-platform-emoji-icons-with-actual-logo-images-steam-logo-for-pc-platform-xbox-logo-for-xbox-platform-playstation-logo-for-ps4-ps5-platforms",
-      "featureTitle": "Replace all platform emoji icons with actual logo images: Steam logo for PC platform, Xbox logo for Xbox platform, PlayStation logo for PS4/PS5 platforms",
+      "featureId": "feature-modify-the-price-display-in-gamecard-component-to-use-medium-sizing-not-too-small-not-too-large-while-keeping-it-positioned-in-the-top-right-corner-below-the-sale-label",
+      "featureTitle": "Modify the price display in GameCard component to use medium sizing - not too small, not too large - while keeping it positioned in the top right corner below the sale label",
       "files": [
         "frontend/src/components/GameCard.tsx"
       ],
@@ -18,26 +18,6 @@
       ],
       "testIds": [
         "REQ-1"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-white-navigation-arrows-to-the-horizontally-scrollable-game-rows-to-guide-users-on-how-to-slide-through-games",
-      "featureTitle": "Add white navigation arrows to the horizontally scrollable game rows to guide users on how to slide through games",
-      "files": [
-        "frontend/src/components/GameCatalog.tsx"
-      ],
-      "components": [
-        "authorization@4.0.0",
-        "blob-storage@4.0.0",
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-2"
       ],
       "confidence": "high"
     }

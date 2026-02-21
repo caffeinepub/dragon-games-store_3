@@ -4,7 +4,7 @@
   "frontend/src/components/Header.tsx": "Header component displaying Steam icon at top, WhatsApp icon below it (clickable to open chat), DGS logo, site title, admin panel link (for admins), and login/logout button.",
   "frontend/src/components/Footer.tsx": "Footer component with copyright notice and Caffeine.ai attribution link with UTM tracking.",
   "frontend/src/components/AboutUs.tsx": "About section displaying Dragon Games Store description, platform availability, customer stats, and value propositions with icons.",
-  "frontend/src/components/GameCard.tsx": "Game card component displaying game details with platform logo images (Steam, Xbox, PlayStation) instead of text emojis, showing price, description, and trailer with click-to-open detail dialog; admin cards show edit/delete buttons.",
+  "frontend/src/components/GameCard.tsx": "Game card component displaying game details with platform logo images, medium-sized price (text-xl) in top right corner, sale badge in top left, and trailer with click-to-open detail dialog; admin cards show edit/delete buttons.",
   "frontend/src/components/GameCatalog.tsx": "Game catalog component with search functionality and horizontally scrollable game rows featuring white navigation arrows on hover that appear on left/right edges to guide users through horizontal scrolling, with arrows hidden when at start/end positions.",
   "frontend/src/components/AdminGameForm.tsx": "Admin form for adding/editing games with fields for name, price, platform (using Platform enum), description, image upload with progress tracking, trailer URL, and sale status.",
   "frontend/src/components/AdminGameList.tsx": "Admin game list displaying all games with edit and delete actions, including confirmation dialog for deletions.",

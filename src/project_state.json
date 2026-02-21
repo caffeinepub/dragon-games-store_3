@@ -1,43 +1,28 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "New project",
-  "architectural_notes": [],
+  "summary": "E-commerce gaming platform showcasing games with prices, sale labels, WhatsApp contact, and horizontal scrolling navigation",
+  "architectural_notes": [
+    "WhatsApp contact symbol positioned at top of page",
+    "Horizontal scrolling arrows for game navigation to guide customers",
+    "Medium-sized price display in top right corner of game cards",
+    "Sale label positioned in top left corner of game cards",
+    "Color scheme maintained from previous version"
+  ],
   "known_issues": [],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Steam platform logo icon with transparent background (steam-logo.dim_64x64.png)\n- Xbox platform logo icon with transparent background (xbox-logo.dim_64x64.png)\n- PlayStation platform logo icon with transparent background (playstation-logo.dim_64x64.png)",
   "existing_features": [
     {
-      "id": "feature-replace-all-platform-emoji-icons-with-actual-logo-images-steam-logo-for-pc-platform-xbox-logo-for-xbox-platform-playstation-logo-for-ps4-ps5-platforms",
-      "title": "Replace all platform emoji icons with actual logo images: Steam logo for PC platform, Xbox logo for Xbox platform, PlayStation logo for PS4/PS5 platforms",
+      "id": "feature-modify-the-price-display-in-gamecard-component-to-use-medium-sizing-not-too-small-not-too-large-while-keeping-it-positioned-in-the-top-right-corner-below-the-sale-label",
+      "title": "Modify the price display in GameCard component to use medium sizing - not too small, not too large - while keeping it positioned in the top right corner below the sale label",
       "reqIds": [
         "REQ-1"
       ],
       "version": 1
-    },
-    {
-      "id": "feature-add-white-navigation-arrows-to-the-horizontally-scrollable-game-rows-to-guide-users-on-how-to-slide-through-games",
-      "title": "Add white navigation arrows to the horizontally scrollable game rows to guide users on how to slide through games",
-      "reqIds": [
-        "REQ-2"
-      ],
-      "version": 1
     }
   ],
-  "new_feature_requests": [
-    {
-      "id": "AR-1",
-      "summary": "Replace emoji icons with actual platform logos (Steam, Xbox, PlayStation)",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-2",
-      "summary": "Add white navigation arrows to guide horizontal game sliding",
-      "reqIds": [],
-      "status": "pending"
-    }
-  ],
+  "new_feature_requests": [],
+  "gameProjectType": "none",
   "projectName": "Dragon Games Store",
   "clarification_mode": "instant",
   "clarification_rounds": 0

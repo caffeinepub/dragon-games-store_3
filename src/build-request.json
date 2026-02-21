@@ -1,66 +1,43 @@
 {
   "kind": "build_request",
-  "title": "Replace platform emojis with logos and add slide navigation arrows",
+  "title": "Adjust game card pricing display to medium size",
   "projectName": "Dragon Games Store",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Replace all platform emoji icons with actual logo images: Steam logo for PC platform, Xbox logo for Xbox platform, PlayStation logo for PS4/PS5 platforms",
-      "target": "both",
-      "source": {
-        "messageIds": [
-          "msg-5"
-        ],
-        "quotes": [
-          "Make the game logos in steam xbox and ps icon too not just emojis and remove emojis like for xbox there will be xbox logo and for pc there will be steam same as ps for playstation"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Platform badges on game cards display actual logo images instead of text emojis",
-        "Steam logo appears for PC platform games",
-        "Xbox logo appears for Xbox platform games",
-        "PlayStation logo appears for PS4 and PS5 platform games",
-        "Logo images are properly sized and styled to match the existing badge design"
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "text": "Add white navigation arrows to the horizontally scrollable game rows to guide users on how to slide through games",
+      "text": "Modify the price display in GameCard component to use medium sizing - not too small, not too large - while keeping it positioned in the top right corner below the sale label",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-5"
+          "msg-17"
         ],
         "quotes": [
-          "when sliding b/w games there must be horizontal slides so if slides are horizontal add white normal arrow to guide people where to slide"
+          "Not too small keep it medium not too large not too small"
         ]
       },
       "acceptanceCriteria": [
-        "White arrow buttons appear on both left and right sides of each game row",
-        "Arrows are positioned to clearly indicate horizontal scrolling capability",
-        "Left arrow is hidden or disabled when at the start of a row",
-        "Right arrow is hidden or disabled when at the end of a row",
-        "Clicking arrows smoothly scrolls the game row horizontally"
+        "Price text is visually balanced - larger than small text but not oversized",
+        "Price remains in top right corner position",
+        "Price stays below the sale label when both are present"
       ]
     }
   ],
   "constraints": [
-    "Maintain existing game card layout and styling",
-    "Preserve the horizontally scrollable row structure in GameCatalog component",
-    "Keep the white/black/blue color scheme consistent"
+    "Keep the existing color scheme unchanged",
+    "Maintain WhatsApp symbol at the top",
+    "Preserve horizontal scrolling arrows functionality",
+    "Keep sale label in top left corner",
+    "Do not modify backend game data structures"
   ],
   "nonGoals": [
-    "Changing the overall layout of the game catalog",
-    "Modifying the game data model or backend platform logic",
-    "Altering the existing platform filter functionality"
+    "Changing the color scheme or visual theme",
+    "Modifying the horizontal scrolling arrow implementation",
+    "Adjusting WhatsApp symbol styling or position",
+    "Changing sale label styling or position"
   ],
   "imageRequirements": {
-    "required": [
-      "Steam platform logo icon with transparent background (steam-logo.dim_64x64.png)",
-      "Xbox platform logo icon with transparent background (xbox-logo.dim_64x64.png)",
-      "PlayStation platform logo icon with transparent background (playstation-logo.dim_64x64.png)"
-    ],
+    "required": [],
     "edits": []
   }
 }
