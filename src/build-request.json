@@ -1,55 +1,39 @@
 {
   "kind": "build_request",
-  "title": "Enlarge game images and trigger video on click",
+  "title": "Deploy Draft Version 4 to Live Network",
   "projectName": "Dragon Games Store",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Increase the size of game images in GameCard component to make them more prominent in the display",
-      "target": "frontend",
+      "text": "Deploy the current Draft Version 4 implementation with larger GameCard images and click-to-play video trailers to the live Internet Computer network",
+      "target": "both",
       "source": {
         "messageIds": [
-          "msg-latest"
+          "msg-user-yes"
         ],
         "quotes": [
-          "make game image to appear bigger"
+          "Yes"
         ]
       },
       "acceptanceCriteria": [
-        "Game images are visibly larger than current size",
-        "Images remain properly proportioned and do not overflow their containers",
-        "Layout adjusts appropriately to accommodate larger images"
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "text": "Change video trailer behavior in GameCard so that the video only plays when user clicks on the game image, not automatically",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-latest"
-        ],
-        "quotes": [
-          "once we click on game image then the video trailer starts not before"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Video trailer does not autoplay when GameCard is rendered",
-        "Clicking on the game image triggers the video trailer to start playing",
-        "Video player controls remain accessible after click-to-play is initiated"
+        "Application is deployed and accessible on the Internet Computer mainnet",
+        "All GameCard components display with the increased image dimensions",
+        "Video trailers require click interaction to play and do not autoplay",
+        "All existing functionality (authentication, admin panel, game catalog, user profiles) works correctly on the live deployment"
       ]
     }
   ],
   "constraints": [
-    "Only modify frontend/src/components/GameCard.tsx",
-    "Do not change backend logic or data structures",
-    "Preserve existing Buy Now and admin action buttons functionality"
+    "Preserve all existing functionality including authentication, admin game management, and user profile features",
+    "Maintain the current database schema and backend logic without modifications",
+    "Keep all frontend immutable paths unchanged (hooks/useInternetIdentity, hooks/useActor, main.tsx, components/ui)"
   ],
   "nonGoals": [
-    "Changing the overall layout structure of GameCatalog",
-    "Modifying video source URLs or trailer data",
-    "Adding new video player features beyond click-to-play"
+    "Adding new features beyond what exists in Draft Version 4",
+    "Modifying the visual design or styling",
+    "Changing any backend data models or API endpoints",
+    "Adding new game management capabilities"
   ],
   "imageRequirements": {
     "required": [],

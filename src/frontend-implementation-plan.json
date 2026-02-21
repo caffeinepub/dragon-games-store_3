@@ -1,37 +1,77 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Enlarge game images and trigger video on click",
+  "title": "Deploy Draft Version 4 to Live Network",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Increase the size of game images in GameCard component to make them more prominent in the display",
+      "summary": "Deploy the current Draft Version 4 implementation with larger GameCard images and click-to-play video trailers to the live Internet Computer network",
       "acceptanceCriteria": [
-        "Game images are visibly larger than current size",
-        "Images remain properly proportioned and do not overflow their containers",
-        "Layout adjusts appropriately to accommodate larger images"
+        "Application is deployed and accessible on the Internet Computer mainnet",
+        "All GameCard components display with the increased image dimensions",
+        "Video trailers require click interaction to play and do not autoplay",
+        "All existing functionality (authentication, admin panel, game catalog, user profiles) works correctly on the live deployment"
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/GameCard.tsx",
           "operation": "modify",
-          "description": "Increase the height constraint on the game image element to make it more prominent. Adjust the container dimensions to accommodate the larger image while maintaining proper proportions and preventing overflow. Ensure the image scales appropriately within the card layout and remains responsive across different screen sizes."
-        }
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "summary": "Change video trailer behavior in GameCard so that the video only plays when user clicks on the game image, not automatically",
-      "acceptanceCriteria": [
-        "Video trailer does not autoplay when GameCard is rendered",
-        "Clicking on the game image triggers the video trailer to start playing",
-        "Video player controls remain accessible after click-to-play is initiated"
-      ],
-      "file_operations": [
+          "description": "Verify that GameCard component uses larger image dimensions and implements click-to-play video trailer behavior without autoplay. Ensure video controls include user-interaction requirement and that the ExternalBlob.getDirectURL() is used for both image and video rendering to leverage browser caching and streaming on the live network."
+        },
         {
-          "path": "frontend/src/components/GameCard.tsx",
+          "path": "frontend/src/pages/HomePage.tsx",
           "operation": "modify",
-          "description": "Remove autoplay attribute from the video element to prevent automatic playback. Add click event handler to the game image that triggers video playback when clicked. Implement state management to track video play status and ensure the video player controls remain accessible after the user initiates playback. The implementation should provide clear visual feedback that the image is clickable and will start the video trailer."
+          "description": "Review HomePage to ensure it properly displays the GameCatalog and AboutUs sections with the updated GameCard styling. Verify that UserProfileSetup modal integration works correctly for first-time authenticated users on the live deployment."
+        },
+        {
+          "path": "frontend/src/pages/AdminPage.tsx",
+          "operation": "modify",
+          "description": "Verify AdminPage correctly renders the AdminGameList and AdminGameForm components with proper authentication guards using the authorization component. Ensure admin-only access control works on the live network."
+        },
+        {
+          "path": "frontend/src/components/GameCatalog.tsx",
+          "operation": "modify",
+          "description": "Confirm GameCatalog properly renders GameCard components with larger images and click-to-play videos in the scrollable layout. Verify search filtering and loading states work correctly on the live deployment."
+        },
+        {
+          "path": "frontend/src/components/AdminGameForm.tsx",
+          "operation": "modify",
+          "description": "Verify AdminGameForm properly handles image uploads using the blob-storage component with ExternalBlob.fromBytes() and withUploadProgress() for tracking upload progress. Ensure video URL field and all game properties are correctly wired for live network deployment."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Confirm Header component displays authentication status, login/logout functionality using the authorization component, and conditional admin panel navigation based on user role. Verify the component works correctly on the live network."
+        },
+        {
+          "path": "frontend/src/hooks/useInternetIdentity.ts",
+          "operation": "modify",
+          "description": "Review Internet Identity authentication hook to ensure it properly manages login state, identity persistence, and delegation validation for the live Internet Computer network. Verify AuthClient integration and error handling work correctly in production."
+        },
+        {
+          "path": "frontend/src/hooks/useActor.ts",
+          "operation": "modify",
+          "description": "Verify the actor hook properly creates backend connections with authentication for the live network deployment. Ensure access control initialization and query invalidation work correctly in production."
+        },
+        {
+          "path": "frontend/src/hooks/useAuth.ts",
+          "operation": "modify",
+          "description": "Confirm authentication hooks (useGetCallerUserProfile, useSaveCallerUserProfile, useGetCallerUserRole, useIsCallerAdmin) properly fetch and manage user data from the live backend. Verify the authorization component integration works correctly."
+        },
+        {
+          "path": "frontend/src/hooks/useGames.ts",
+          "operation": "modify",
+          "description": "Verify game management hooks properly handle CRUD operations with the blob-storage component for images and videos. Ensure ExternalBlob integration works correctly for the live network deployment."
+        },
+        {
+          "path": "frontend/src/components/UserProfileSetup.tsx",
+          "operation": "modify",
+          "description": "Confirm UserProfileSetup modal properly prompts first-time users for profile creation using the authorization component. Verify the modal cannot be dismissed until profile setup is complete on the live deployment."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Review root application component to ensure TanStack Router configuration, layout structure, and route definitions work correctly for the live network deployment."
         }
       ]
     }

@@ -5,29 +5,14 @@
   "architectural_notes": [],
   "known_issues": [],
   "isFixRequest": false,
-  "existing_features": [
-    {
-      "id": "feature-increase-the-size-of-game-images-in-gamecard-component-to-make-them-more-prominent-in-the-display",
-      "title": "Increase the size of game images in GameCard component to make them more prominent in the display",
-      "reqIds": [
-        "REQ-1"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-change-video-trailer-behavior-in-gamecard-so-that-the-video-only-plays-when-user-clicks-on-the-game-image-not-automatically",
-      "title": "Change video trailer behavior in GameCard so that the video only plays when user clicks on the game image, not automatically",
-      "reqIds": [
-        "REQ-2"
-      ],
-      "version": 1
-    }
-  ],
+  "existing_features": [],
   "new_feature_requests": [
     {
       "id": "AR-1",
-      "summary": "Make game image larger and start video trailer only on click",
-      "reqIds": [],
+      "summary": "Deploy the current Draft Version 4 implementation with larger GameCard images and click-to-play video trailers to the live Internet Computer network",
+      "reqIds": [
+        "REQ-1"
+      ],
       "status": "pending"
     }
   ],
