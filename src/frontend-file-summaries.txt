@@ -1,0 +1,18 @@
+{
+  "frontend/src/index.css": "Global styles with white background and black text theme, blue primary color for buttons, and custom scrollbar styling.",
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup, defining routes for home page and admin panel with shared header/footer layout.",
+  "frontend/src/components/Header.tsx": "Header component displaying DGS logo, site title, admin panel link (for admins), and login/logout button.",
+  "frontend/src/components/Footer.tsx": "Footer component with copyright notice and Caffeine.ai attribution link with UTM tracking.",
+  "frontend/src/components/AboutUs.tsx": "About section displaying Dragon Games Store description, platform availability, customer stats, and value propositions with icons.",
+  "frontend/src/components/GameCard.tsx": "Game card component displaying game image, name, price, platform, description, optional trailer video, sale badge, and Buy Now button linking to WhatsApp number 918757242995.",
+  "frontend/src/components/GameCatalog.tsx": "Game catalog component with search bar and search icon at the top that filters games by name in real-time, displaying filtered results in horizontally scrollable rows with vertical scrolling between rows.",
+  "frontend/src/components/AdminGameForm.tsx": "Admin form for adding/editing games with fields for name, price, platform (using Platform enum), description, image upload with progress tracking, trailer URL, and sale status.",
+  "frontend/src/components/AdminGameList.tsx": "Admin game list displaying all games with edit and delete actions, including confirmation dialog for deletions.",
+  "frontend/src/components/ProtectedRoute.tsx": "Protected route wrapper that checks authentication and admin role, displaying appropriate access denied or login prompts.",
+  "frontend/src/components/UserProfileSetup.tsx": "Modal dialog for first-time user profile setup, prompting authenticated users to enter their name.",
+  "frontend/src/pages/HomePage.tsx": "Home page component rendering AboutUs section, GameCatalog, and UserProfileSetup modal for new users.",
+  "frontend/src/pages/AdminPage.tsx": "Admin page with protected route wrapper, displaying game management interface with add/edit/delete functionality.",
+  "frontend/src/hooks/useAuth.ts": "React Query hooks for authentication operations including user role checks, admin verification, and profile management.",
+  "frontend/src/hooks/useGames.ts": "React Query hooks for game CRUD operations including fetching all games, filtering by platform/sale status, and add/update/delete mutations.",
+  "frontend/tailwind.config.js": "Tailwind configuration with Inter font family and extended theme settings for the white/black/blue color scheme."
+}

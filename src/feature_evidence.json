@@ -1,0 +1,45 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-whatsapp-contact-number-from-918757242955-to-918757242995-in-all-buy-now-button-links-throughout-the-website",
+      "featureTitle": "Update the WhatsApp contact number from 918757242955 to 918757242995 in all Buy Now button links throughout the website",
+      "files": [
+        "frontend/src/components/GameCard.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-search-bar-with-a-search-icon-at-the-top-of-the-page-that-allows-users-to-filter-games-by-name-in-real-time",
+      "featureTitle": "Add a search bar with a search icon at the top of the page that allows users to filter games by name in real-time",
+      "files": [
+        "frontend/src/components/GameCatalog.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

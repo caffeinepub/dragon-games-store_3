@@ -1,0 +1,41 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Update WhatsApp contact number and add game search functionality",
+  "requirements": [
+    {
+      "id": "REQ-12",
+      "summary": "Update WhatsApp contact number from 918757242955 to 918757242995 in all Buy Now button links",
+      "acceptanceCriteria": [
+        "All Buy Now buttons redirect to https://wa.me/918757242995",
+        "The GameCard component uses the updated WhatsApp number",
+        "No references to the old number 918757242955 remain in the codebase"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/GameCard.tsx",
+          "operation": "modify",
+          "description": "Update the WhatsApp link in the Buy Now button from https://wa.me/918757242955 to https://wa.me/918757242995. Search for all occurrences of the old number and replace with the new number."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Add search bar with icon at the top of the game catalog for real-time game name filtering",
+      "acceptanceCriteria": [
+        "Search bar is prominently displayed at the top of the game catalog section",
+        "Search icon is visible within or adjacent to the search input field",
+        "Typing in the search bar filters the displayed games by matching game names",
+        "Search is case-insensitive and updates results in real-time",
+        "Clearing the search bar shows all games again"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/GameCatalog.tsx",
+          "operation": "modify",
+          "description": "Add a search input field with a search icon (using Lucide React's Search icon) at the top of the component, above the game grid. Implement useState to track the search query. Filter the games array using the search query to match game names case-insensitively before rendering. The filtered results should update in real-time as the user types. Maintain the existing horizontal scrolling layout for the filtered game rows."
+        }
+      ]
+    }
+  ]
+}

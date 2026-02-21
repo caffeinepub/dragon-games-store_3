@@ -1,0 +1,50 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-21T17:15:39.920Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 2,
+    "items": [
+      {
+        "id": "REQ-12",
+        "summary": "Update the WhatsApp contact number from 918757242955 to 918757242995 in all Buy Now button links throughout the website",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/GameCard.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/GameCard.tsx"
+        ]
+      },
+      {
+        "id": "REQ-13",
+        "summary": "Add a search bar with a search icon at the top of the page that allows users to filter games by name in real-time",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/GameCatalog.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/GameCatalog.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "build-template/README.md",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/components/GameCard.tsx",
+    "frontend/src/components/GameCatalog.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Gaming store website for Dragon Games Store - a digital gaming marketplace with 3+ years experience and 5,600+ customers. White background with black text theme, horizontal layout with game catalog featuring images, trailers, descriptions, and prices. Blue and white 'Buy Now' buttons redirect to WhatsApp for purchases. Includes search functionality for games.",
+  "architectural_notes": [
+    "White background with black text theme throughout",
+    "Horizontal layout optimized for browsing",
+    "WhatsApp integration for purchase flow",
+    "Support for game platforms: PC, PS5, PS4, Xbox",
+    "Search functionality for game catalog"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-design-a-horizontal-layout-website-with-white-background-and-black-text-throughout-as-the-base-theme",
+      "title": "Design a horizontal layout website with white background and black text throughout as the base theme",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-header-with-a-dgs-logo-that-displays-dgs-text-in-black-on-a-white-background-as-the-profile-picture",
+      "title": "Create a header with a DGS logo that displays 'DGS' text in black on a white background as the profile picture",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-an-about-us-section-with-the-provided-description-highlighting-3-years-experience-5-600-customer-base-24-7-support-platform-availability-pc-ps5-ps4-xbox-and-the-complete-why-choose-dragon-games-store-content",
+      "title": "Display an 'About Us' section with the provided description highlighting 3+ years experience, 5,600+ customer base, 24/7 support, platform availability (PC, PS5, PS4, Xbox), and the complete 'Why Choose Dragon Games Store' content",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-game-catalog-grid-with-both-horizontal-scrolling-for-each-row-and-vertical-scrolling-for-multiple-rows-displaying-game-cards-with-image-name-trailer-video-embed-if-available-description-and-platform-tag",
+      "title": "Implement a game catalog grid with both horizontal scrolling for each row and vertical scrolling for multiple rows, displaying game cards with image, name, trailer video embed (if available), description, and platform tag",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-sale-badge-on-top-of-each-game-card-with-blue-background-and-white-text-when-the-game-s-onsale-flag-is-true",
+      "title": "Add a 'SALE!' badge on top of each game card with blue background and white text when the game's onSale flag is true",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-the-game-price-in-the-top-right-corner-of-each-game-card-in-large-highly-visible-text-showing-amount-only-format-in-black-text-on-white-background",
+      "title": "Display the game price in the top right corner of each game card in large, highly visible text showing '₹[amount]/- only' format in black text on white background",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-buy-now-button-on-each-game-card-with-blue-background-and-white-text-that-redirects-to-whatsapp-chat-at-https-wa-me-918757242955-when-clicked",
+      "title": "Add a 'Buy Now' button on each game card with blue background and white text that redirects to WhatsApp chat at https://wa.me/918757242955 when clicked",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-admin-interface-to-add-edit-and-delete-games-from-the-catalog-with-fields-for-name-price-description-image-url-trailer-video-url-platform-selection-and-sale-status-toggle",
+      "title": "Create an admin interface to add, edit, and delete games from the catalog with fields for name, price, description, image URL, trailer video URL, platform selection, and sale status toggle",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-the-generated-dragon-games-store-logo-in-the-header",
+      "title": "Display the generated Dragon Games Store logo in the header",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-whatsapp-contact-number-from-918757242955-to-918757242995-in-all-buy-now-button-links-throughout-the-website",
+      "title": "Update the WhatsApp contact number from 918757242955 to 918757242995 in all Buy Now button links throughout the website",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-search-bar-with-a-search-icon-at-the-top-of-the-page-that-allows-users-to-filter-games-by-name-in-real-time",
+      "title": "Add a search bar with a search icon at the top of the page that allows users to filter games by name in real-time",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Game catalog with image, name, trailer video, and description fields",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Horizontal and vertical sliding/scrolling for game display",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Blue 'SALE!' badge with white text on top of each game",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Price display in top right corner (₹249/- format) in large, visible black text on white",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "DGS profile logo with white background and black text",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Blue 'Buy Now' button with white text that redirects to WhatsApp (https://wa.me/918757242955)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "About/description section highlighting 3+ years experience, 5,600+ customers, 24/7 support, and multi-platform game availability",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Create a backend data model for games with fields: name (text), price (number in rupees), description (text), imageUrl (text), trailerVideoUrl (optional text), platform (text: PC/PS5/PS4/Xbox), and onSale (boolean)",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Implement backend functions to add new games to the catalog, retrieve all games, update game details, and delete games",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Update WhatsApp contact number from 918757242955 to 918757242995 for all Buy Now buttons",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Add search bar with search icon at the top of the page for filtering games",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Dragon Games Store",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
